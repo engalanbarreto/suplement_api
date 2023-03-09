@@ -28,9 +28,9 @@ app.get('/users', (req, res) => {
     // o map é para mapear os valores em um objeto e simplificar
     Usuario.findAll().then((valores) => {
         if (valores.length > 0) {
-            return res.send(valores.map(valores => valores.toJSON()));
+            return res.json(valores.map(valores => valores.toJSON()));
         } else {
-            res.send({ message: 'Não existe usuario' });
+            res.json({ message: 'Não existe usuario' });
         }
     }).catch((err) => {
         console.log(`Houve um erro: ${err}`);
