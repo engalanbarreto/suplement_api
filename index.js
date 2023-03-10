@@ -3,7 +3,7 @@ const session = require('express-session')
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 443;
+const PORT = process.env.PORT || 3030;
 
 app.use(cors());
 app.use(express.json());
@@ -105,5 +105,5 @@ app.post('/cadusers', (req, res) => {
 
 // CONFIGURAÇÃO DO SERVIDOR
 app.listen(PORT, () => {
-    console.log(`Servidor rodando em https://localhost:${PORT}`);
+    console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
